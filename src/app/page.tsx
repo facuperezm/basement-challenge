@@ -1,11 +1,7 @@
-import { Icons } from "@/components/icons";
-import Marquee from "@/components/marquee";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import shirt from "../../public/shirt.webp";
-import cap from "../../public/cap.webp";
-import hoodie from "../../public/hoodie.webp";
-import { formatPrice } from "@/lib/utils";
+import Marquee from "@/components/marquee";
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 
 export interface Product {
   id: string;
