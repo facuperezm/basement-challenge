@@ -10,6 +10,7 @@ const grotesque = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://basement-challenge-facundo.vercel.app"),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
