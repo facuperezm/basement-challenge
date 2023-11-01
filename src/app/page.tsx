@@ -37,9 +37,12 @@ export default async function Home() {
             CART (0)
           </Button>
         </nav>
-        <Icons.heroimg className="w-full h-fit mt-4 px-4" aria-hidden="true" />
+        <Icons.heroimg
+          className="w-full h-fit md:mt-4 px-2 md:px-4"
+          aria-hidden="true"
+        />
         <div className="relative py-4">
-          <Marquee className="mt-4" />
+          <Marquee className="mt-1 md:mt-4" />
           <div>
             <Icons.firstAsterisk className="z-999  w-36 h-36  hidden md:block animate-spin-slow absolute left-9 -bottom-14" />
             <Icons.secondAsterisk className="z-999 w-36 h-36 hidden md:block absolute right-14 bottom-0" />

@@ -19,7 +19,7 @@ function Marquee({ className = "" }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex -mx-96 border-t-2 border-b-2 border-white py-1 md:py-2",
+        "flex md:-mx-96 border-t-2 border-b-2 border-white py-1 md:py-2 overflow-x-hidden",
         className
       )}
     >
