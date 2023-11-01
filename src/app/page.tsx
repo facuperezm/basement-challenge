@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Marquee from "@/components/marquee";
-import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import logo from "../../public/logo.svg";
+import mobileLogo from "../../public/mobile-logo.svg";
+import navLogo from "../../public/nav-logo.svg";
+import heroImage from "../../public/hero-img.svg";
+import firstAsterisk from "../../public/first-asterisk.svg";
+import secondAsterisk from "../../public/second-asterisk.svg";
+import footerImage from "../../public/footer-img.svg";
+import addToCartImage from "../../public/add-to-cart.svg";
 
 export interface Product {
   id: string;
@@ -30,22 +37,55 @@ export default async function Home() {
     <>
       <header>
         <nav className="flex items-center p-4 justify-between w-full">
-          <Icons.logo className="h-7 hidden md:block" aria-hidden="true" />
-          <Icons.mobileLogo className="h-10 md:hidden" aria-hidden="true" />
-          <Icons.headerlogo className="hidden md:block" aria-hidden="true" />
+          <Image
+            alt="Basement logo for desktop"
+            src={logo}
+            width={192}
+            height={48}
+            className="h-7 hidden md:block"
+            aria-hidden="true"
+          />
+          <Image
+            src={mobileLogo}
+            alt="Basement logo for mobile"
+            width={40}
+            height={43}
+            className="h-10 md:hidden"
+            aria-hidden="true"
+          />
+          <Image
+            src={navLogo}
+            alt="Navigation bar logos"
+            width={284}
+            height={24}
+            className="hidden md:block"
+            aria-hidden="true"
+          />
           <Button variant="outline" size="default" className="text-lg">
             CART (0)
           </Button>
         </nav>
-        <Icons.heroimg
+        <Image
+          src={heroImage}
+          alt="Hero image saying Basement Supply"
+          width={1376}
+          height={365}
           className="w-full h-fit md:mt-4 px-4"
           aria-hidden="true"
         />
         <div className="relative py-4">
           <Marquee className="md:mt-4" />
           <div>
-            <Icons.firstAsterisk className="z-999  w-36 h-36  hidden md:block animate-spin-slow absolute left-9 -bottom-14" />
-            <Icons.secondAsterisk className="z-999 w-36 h-36 hidden md:block absolute right-14 bottom-0" />
+            <Image
+              src={firstAsterisk}
+              alt="three dimentional asterisk flying around"
+              className="z-999  w-36 h-36  hidden md:block animate-spin-slow absolute left-9 -bottom-14"
+            />
+            <Image
+              src={secondAsterisk}
+              alt="three dimentional asterisk flying around rotated"
+              className="z-999 w-36 h-36 hidden md:block absolute right-14 bottom-0"
+            />
           </div>
         </div>
       </header>
@@ -67,7 +107,13 @@ export default async function Home() {
                   />
                 </div>
                 <div className="flex w-full h-full absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
-                  <Icons.hoverimg aria-hidden="true" />
+                  <Image
+                    src={addToCartImage}
+                    alt="an image saying add to cart"
+                    width={245}
+                    height={128}
+                    aria-hidden="true"
+                  />
                 </div>
                 <div className="flex justify-between w-full mt-2 ">
                   <span className="text-xl">{product.name}</span>
@@ -79,7 +125,11 @@ export default async function Home() {
         </div>
       </main>
       <footer className="flex flex-end justify-end">
-        <Icons.footerimg
+        <Image
+          src={footerImage}
+          alt="footer image saying wear everyday"
+          width={1376}
+          height={486}
           className="w-full h-fit mt-4 px-4"
           aria-hidden="true"
         />
