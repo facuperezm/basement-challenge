@@ -29,7 +29,7 @@ export default async function Home() {
   return (
     <>
       <header>
-        <nav className="flex items-center p-4 justify-between w-full ">
+        <nav className="flex items-center p-4 justify-between w-full">
           <Icons.logo className="h-7 hidden md:block" aria-hidden="true" />
           <Icons.mobileLogo className="h-7 md:hidden" aria-hidden="true" />
           <Icons.headerlogo className="hidden md:block" aria-hidden="true" />
@@ -38,13 +38,15 @@ export default async function Home() {
           </Button>
         </nav>
         <Icons.heroimg className="w-full h-fit mt-4 px-4" aria-hidden="true" />
-        <div className="relative">
-          <Marquee className="mt-4 relative" />
-          <Icons.firstAsterisk className="z-10  w-36 h-36  hidden md:block animate-spin-slow absolute left-9 -bottom-14" />
-          <Icons.secondAsterisk className="z-10 w-36 h-36 hidden md:block absolute right-14 bottom-0" />
+        <div className="relative py-4">
+          <Marquee className="mt-4" />
+          <div>
+            <Icons.firstAsterisk className="z-999  w-36 h-36  hidden md:block animate-spin-slow absolute left-9 -bottom-14" />
+            <Icons.secondAsterisk className="z-999 w-36 h-36 hidden md:block absolute right-14 bottom-0" />
+          </div>
         </div>
       </header>
-      <main className="">
+      <main className="mt-20">
         <div className="grid gap-4 grid-cols-1 px-4 md:grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
           {products.map((product) => {
             return (

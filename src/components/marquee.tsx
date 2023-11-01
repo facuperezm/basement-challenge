@@ -14,11 +14,12 @@ function Marquee({ className = "" }: { className?: string }) {
     </>
   );
 
-  const ulClassName = "flex animate-marquee shrink-0 gap-2 pl-2 text-3xl";
+  const ulClassName =
+    "flex animate-marquee shrink-0 whitespace-nowrap gap-2 pl-2 text-xl md:text-3xl";
   return (
     <div
       className={cn(
-        "flex -mx-96 border-t-2 border-b-2 border-white overflow-x-hidden py-2",
+        "flex -mx-96 border-t-2 border-b-2 border-white py-1 md:py-2",
         className
       )}
     >
