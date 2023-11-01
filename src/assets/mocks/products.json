@@ -1,0 +1,41 @@
+[
+    {
+        "id": "black-tshirt",
+        "image": "/products/shirt.webp",
+        "price": 7.95,
+        "name": "Black t-shirt",
+        "description": "Unisex Basic Softstyle T-Shirt",
+        "options": [
+            {
+                "label": "size",
+                "values": ["S", "M", "L", "XL"]
+            }
+        ]
+    },
+    {
+        "id": "black-hoodie",
+        "image": "/products/hoodie.webp",
+        "price": 13,
+        "name": "Black hoodie",
+        "description": "Unisex Basic Softstyle Hoodie",
+        "options": [
+            {
+                "label": "size",
+                "values": ["S", "M", "L", "XL"]
+            }
+        ]
+    },
+    {
+        "id": "black-cap",
+        "image": "/products/cap.webp",
+        "price": 23,
+        "name": "Black cap",
+        "description": "Unisex Basic Essential Cap",
+        "options": [
+            {
+                "label": "size",
+                "values": ["S", "M", "L", "XL"]
+            }
+        ]
+    }
+]

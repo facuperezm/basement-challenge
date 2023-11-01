@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 
 const grotesque = localFont({
-  src: "@/fonts/BasementGrotesque-Black_v1.202.woff2",
+  src: "../assets/fonts/basement-grotesque.woff2",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,12 +24,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "min-h-screen bg-background scroll-smooth antialiased",
+        "min-h-screen bg-background text-foreground scroll-smooth antialiased",
         grotesque.className
       )}
-      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body className="container mx-auto overflow-x-hidden">{children}</body>
     </html>
   );
 }
