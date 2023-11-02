@@ -53,12 +53,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "min-h-screen bg-background text-foreground scroll-smooth antialiased",
+        "min-h-screen bg-background text-foreground scroll-smooth antialiased container",
         grotesque.className
       )}
       suppressHydrationWarning
     >
-      <body className="container mx-auto overflow-x-hidden">{children}</body>
+      <body className="overflow-x-hidden">{children}</body>
     </html>
   );
 }

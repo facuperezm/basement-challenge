@@ -41,6 +41,7 @@ export default function ProductCard({ product }: { product: Product }) {
           alt="an image of a shirt"
           width={440}
           height={628}
+          priority
           className="mx-auto"
         />
       </div>
