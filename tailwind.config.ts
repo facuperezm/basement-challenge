@@ -69,6 +69,14 @@ module.exports = {
             transform: "translateY(0px)",
           },
         },
+        "slide-left": {
+          from: { transform: "translateX(100%)" },
+          to: { transform: "translateX(0)" },
+        },
+        "slide-right": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -87,6 +95,8 @@ module.exports = {
         },
       },
       animation: {
+        "slide-left": "slide-left 0.2s ease-out",
+        "slide-right": "slide-right 0.2s ease-out",
         "fade-up": "fade-up 0.5s",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

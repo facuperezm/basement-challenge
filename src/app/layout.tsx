@@ -56,6 +56,7 @@ export default function RootLayout({
         "min-h-screen bg-background text-foreground scroll-smooth antialiased",
         grotesque.className
       )}
+      suppressHydrationWarning
     >
       <body className="container mx-auto overflow-x-hidden">{children}</body>
     </html>

@@ -8,20 +8,21 @@ import heroImage from "../../public/hero-img.svg";
 import firstAsterisk from "../../public/first-asterisk.svg";
 import secondAsterisk from "../../public/second-asterisk.svg";
 import footerImage from "../../public/footer-img.svg";
-import addToCartImage from "../../public/add-to-cart.svg";
 
-export interface Product {
-  id: string;
-  image: string;
-  price: number;
-  name: string;
-  description: string;
-  options: Option[];
-}
-export interface Option {
-  label: string;
-  values: string[];
-}
+import { Product } from "@/lib/types";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import CartItem from "@/components/cart-item";
+import ProductCard from "@/components/product-card";
+import Cart from "@/components/modal-cart";
 
 async function getProducts(): Promise<Product[]> {
   const products = await import("../assets/mocks/products.json").then(
@@ -36,7 +37,7 @@ export default async function Home() {
   return (
     <>
       <header>
-        <nav className="flex items-center p-4 justify-between w-full">
+        <nav className="flex items-center p-4 justify-between">
           <Image
             alt="Basement logo for desktop"
             src={logo}
@@ -58,12 +59,10 @@ export default async function Home() {
             alt="Navigation bar logos"
             width={284}
             height={24}
-            className="hidden md:block"
+            className="hidden md:block relative"
             aria-hidden="true"
           />
-          <Button variant="outline" size="default" className="text-lg">
-            CART (0)
-          </Button>
+          <Cart />
         </nav>
         <Image
           src={heroImage}
@@ -90,39 +89,11 @@ export default async function Home() {
         </div>
       </header>
       <main className="mt-20">
-        <div className="grid gap-4 grid-cols-1 px-4 md:grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
+        <section className="grid gap-4 grid-cols-1 px-4 md:grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
           {products.map((product) => {
-            return (
-              <article
-                className="group relative hover:cursor-pointer"
-                key={product.id}
-              >
-                <div className="border-b-2 border-b-white -z-1 bg-gradient-to-t from-[#1D1D1D] to-black group">
-                  <Image
-                    src={product.image}
-                    alt="an image of a shirt"
-                    width={440}
-                    height={628}
-                    className="mx-auto"
-                  />
-                </div>
-                <div className="flex w-full h-full absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
-                  <Image
-                    src={addToCartImage}
-                    alt="an image saying add to cart"
-                    width={245}
-                    height={128}
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="flex justify-between w-full mt-2 ">
-                  <span className="text-xl">{product.name}</span>
-                  <span className="text-xl">${product.price}</span>
-                </div>
-              </article>
-            );
+            return <ProductCard key={product.id} product={product} />;
           })}
-        </div>
+        </section>
       </main>
       <footer className="flex flex-end justify-end">
         <Image
