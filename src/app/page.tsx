@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Marquee from "@/components/marquee";
-import { Button } from "@/components/ui/button";
 import logo from "../../public/logo.svg";
 import mobileLogo from "../../public/mobile-logo.svg";
 import navLogo from "../../public/nav-logo.svg";
@@ -10,17 +9,6 @@ import secondAsterisk from "../../public/second-asterisk.svg";
 import footerImage from "../../public/footer-img.svg";
 
 import { Product } from "@/lib/types";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import CartItem from "@/components/cart-item";
 import ProductCard from "@/components/product-card";
 import Cart from "@/components/modal-cart";
 
