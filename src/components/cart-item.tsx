@@ -48,9 +48,9 @@ export default function CartItem({
 
   return (
     <li className="border border-white">
-      <div className="flex ">
+      <div className="flex">
         <div className="p-2 sm:p-3">
-          <div className="flex w-24 h-full md:w-full items-center align-center my-auto bg-gradient-to-t from-[#1D1D1D] to-black group">
+          <div className="flex w-24 h-full md:w-full  items-center align-center my-auto bg-gradient-to-t from-[#1D1D1D] to-black group">
             <Image
               src={product.image}
               alt="an image of a shirt"

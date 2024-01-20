@@ -1,12 +1,5 @@
 import Image from "next/image";
 import Marquee from "@/components/marquee";
-import logo from "../../public/logo.svg";
-import mobileLogo from "../../public/mobile-logo.svg";
-import navLogo from "../../public/nav-logo.svg";
-import heroImage from "../../public/hero-img.svg";
-import firstAsterisk from "../../public/first-asterisk.svg";
-import secondAsterisk from "../../public/second-asterisk.svg";
-import footerImage from "../../public/footer-img.svg";
 
 import { Product } from "@/lib/types";
 import ProductCard from "@/components/product-card";
@@ -14,7 +7,7 @@ import Cart from "@/components/modal-cart";
 
 async function getProducts(): Promise<Product[]> {
   const products = await import("../assets/mocks/products.json").then(
-    (res) => res.default
+    (res) => res.default as Product[]
   );
   return products;
 }
@@ -28,14 +21,14 @@ export default async function Home() {
         <nav className="flex items-center p-4 justify-between">
           <Image
             alt="Basement logo for desktop"
-            src={logo}
+            src="/logo.svg"
             width={192}
             height={48}
             className="h-7 hidden md:block"
             aria-hidden="true"
           />
           <Image
-            src={mobileLogo}
+            src="/mobile-logo.svg"
             alt="Basement logo for mobile"
             width={40}
             height={43}
@@ -43,7 +36,7 @@ export default async function Home() {
             aria-hidden="true"
           />
           <Image
-            src={navLogo}
+            src="/nav-logo.svg"
             alt="Navigation bar logos"
             width={284}
             height={24}
@@ -53,7 +46,7 @@ export default async function Home() {
           <Cart />
         </nav>
         <Image
-          src={heroImage}
+          src="/hero-img.svg"
           alt="Hero image saying Basement Supply"
           width={1376}
           height={365}
@@ -64,12 +57,16 @@ export default async function Home() {
           <Marquee className="md:mt-4" />
           <div>
             <Image
-              src={firstAsterisk}
+              src="/first-asterisk.svg"
+              width={144}
+              height={144}
               alt="three dimentional asterisk flying around"
               className="z-999  w-36 h-36  hidden md:block animate-spin-slow absolute left-9 -bottom-14"
             />
             <Image
-              src={secondAsterisk}
+              src="/second-asterisk.svg"
+              width={144}
+              height={144}
               alt="three dimentional asterisk flying around rotated"
               className="z-999 w-36 h-36 hidden md:block absolute right-14 bottom-0"
             />
@@ -85,7 +82,7 @@ export default async function Home() {
       </main>
       <footer className="flex flex-end justify-end">
         <Image
-          src={footerImage}
+          src="/footer-img.svg"
           alt="footer image saying wear everyday"
           width={1376}
           height={486}

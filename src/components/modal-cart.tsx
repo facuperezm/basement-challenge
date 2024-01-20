@@ -3,7 +3,6 @@
 import React, { useCallback } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import CartItem from "./cart-item";
-import { Button } from "./ui/button";
 import {
   Sheet,
   SheetTrigger,
@@ -14,6 +13,7 @@ import {
   SheetFooter,
 } from "./ui/sheet";
 import { ProductCart } from "@/lib/types";
+import CartNumber from "./cart-number";
 
 export default function Cart() {
   const [products] = useLocalStorage<ProductCart[]>("products", []);
@@ -30,9 +30,7 @@ export default function Cart() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="default" className="text-lg">
-          CART ({products.length})
-        </Button>
+        <CartNumber />
       </SheetTrigger>
       <SheetContent className="flex flex-col md:max-w-[824px] overflow-y-auto overflow-x-hidden p-4">
         <SheetHeader>

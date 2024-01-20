@@ -16,6 +16,7 @@ function Marquee({ className = "" }: { className?: string }) {
 
   const ulClassName =
     "flex animate-marquee shrink-0 whitespace-nowrap gap-2 pl-2 text-xl md:text-3xl";
+
   return (
     <div
       className={cn(

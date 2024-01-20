@@ -1,8 +1,8 @@
 "use client";
+
 import { Product, ProductCart } from "@/lib/types";
 import { useLocalStorage } from "usehooks-ts";
 
-import addToCartImage from "../../public/add-to-cart.svg";
 import Image from "next/image";
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -47,7 +47,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="flex w-full h-full absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
         <Image
-          src={addToCartImage}
+          src="/add-to-cart.svg"
           alt="an image saying add to cart"
           width={245}
           height={128}
