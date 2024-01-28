@@ -13,10 +13,15 @@ import {
   SheetFooter,
 } from "./ui/sheet";
 import { ProductCart } from "@/lib/types";
-import CartNumber from "./cart-number";
+import { Button } from "./ui/button";
 
 export default function Cart() {
+  const [isClient, setIsClient] = React.useState(false);
   const [products] = useLocalStorage<ProductCart[]>("products", []);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const totalPrice = useCallback(
     () =>
@@ -27,10 +32,16 @@ export default function Cart() {
     [products]
   );
 
+  const totalProducts = products
+    .map((product) => product.quantity)
+    .reduce((ac, product) => ac + product, 0);
+
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <CartNumber />
+        <Button variant="outline" className="text-lg">
+          CART {isClient ? totalProducts : 0}
+        </Button>
       </SheetTrigger>
       <SheetContent className="flex flex-col md:max-w-[824px] overflow-y-auto overflow-x-hidden p-4">
         <SheetHeader>
