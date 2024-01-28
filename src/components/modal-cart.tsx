@@ -50,7 +50,7 @@ export default function Cart() {
             <span className="text-black font-black outline-text">CART</span>
           </SheetTitle>
         </SheetHeader>
-        <SheetDescription className="md:p-4 flex-1 overflow-y-scroll">
+        <SheetDescription className="md:p-4 overflow-y-scroll md:-mb-4">
           <ul className="mt-4 space-y-2 md:space-y-4">
             {products.map((product) => (
               <CartItem
