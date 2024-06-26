@@ -3,13 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useLocalStorage } from "usehooks-ts";
 
-export default function CartItem({
-  product,
-  quantity,
-}: {
-  product: Product;
-  quantity: number;
-}) {
+export default function CartItem({ product }: { product: Product }) {
   const [products, setProducts] = useLocalStorage<ProductCart[]>(
     "products",
     []
@@ -27,14 +21,18 @@ export default function CartItem({
   };
 
   const removeQuantity = () => {
-    setProducts(
-      products
-        .map((item) =>
-          item.id === product.id && item.quantity > 1
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter((item) => item.quantity !== 0)
+    setProducts((products) =>
+      products.reduce<ProductCart[]>((acc, item) => {
+        if (item.id === product.id) {
+          const newQuantity = item.quantity - 1;
+          if (newQuantity > 0) {
+            acc.push({ ...item, quantity: newQuantity });
+          }
+        } else {
+          acc.push(item);
+        }
+        return acc;
+      }, [])
     );
   };
 
@@ -50,7 +48,7 @@ export default function CartItem({
     <li className="border border-white">
       <div className="flex">
         <div className="p-2 sm:p-3">
-          <div className="flex w-24 h-full md:w-full  items-center align-center my-auto bg-gradient-to-t from-[#1D1D1D] to-black group">
+          <div className="flex w-24 h-full md:w-full items-center align-center my-auto bg-gradient-to-t from-[#1D1D1D] to-black group">
             <Image
               src={product.image}
               alt="an image of a shirt"

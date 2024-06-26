@@ -43,21 +43,17 @@ export default function Cart() {
           CART {isClient ? totalProducts : 0}
         </Button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col md:max-w-[824px] overflow-y-auto overflow-x-hidden p-4">
+      <SheetContent className="flex flex-col md:max-w-[824px] justify-between overflow-y-auto overflow-x-hidden p-4">
         <SheetHeader>
           <SheetTitle className="text-center text-8xl font-bold shrink-0">
             YOUR{" "}
             <span className="text-black font-black outline-text">CART</span>
           </SheetTitle>
         </SheetHeader>
-        <SheetDescription className="md:p-4 overflow-y-scroll md:-mb-4">
-          <ul className="mt-4 space-y-2 md:space-y-4">
+        <SheetDescription className="md:p-4 overflow-y-scroll h-full">
+          <ul className="mt-4 space-y-2 md:space-y-4 flex flex-col">
             {products.map((product) => (
-              <CartItem
-                key={product.id}
-                product={product}
-                quantity={product.quantity}
-              />
+              <CartItem key={product.id} product={product} />
             ))}
           </ul>
         </SheetDescription>
